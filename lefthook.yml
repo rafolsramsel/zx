@@ -1,15 +1,15 @@
-pre-commit:
+
   parallel: true
   commands:
     format:
-      glob: '*.{js,ts,md,yml}'
-      run: npm run fmt && git add {staged_files}
+      glob: '{js,ts,md,yml}'
+      run: npm run fmt && git add {unstaged_files}
 pre-push:
   parallel: true
   commands:
     license:
-      run: npm run test:license
+      run: npm run:license
     size:
-      run: npm run test:size
+      run: npm run: size
     circular:
-      run: npm run test:circular
+      run: npm run:circular
